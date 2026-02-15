@@ -45,9 +45,9 @@
         }
         
         header h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem; /* CHANGED: Reduced from 3.5rem to make header more compact */
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem; /* CHANGED: Reduced from 0.5rem to tighten spacing */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             letter-spacing: -1px;
             position: relative;
@@ -55,10 +55,22 @@
         }
         
         header p {
-            font-size: 1.3rem;
+            font-size: 1.1rem; /* CHANGED: Reduced from 1.3rem to make header more compact */
             font-weight: 300;
             letter-spacing: 1px;
             opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ADDED: New CSS class to control SVG logo size and prevent stretching across full screen */
+        .logo-svg {
+            width: 400px; /* Fixed width for consistency */
+            max-width: 400px; /* Prevents stretching beyond 400px */
+            height: 64px; /* Fixed height to maintain aspect ratio */
+            margin: 0 auto 0.8rem; /* Centers the logo horizontally */
+            display: block; /* Required for margin auto centering to work */
+            filter: drop-shadow(0 0 8px rgba(52, 152, 219, 0.4));
             position: relative;
             z-index: 1;
         }
@@ -76,17 +88,19 @@
             z-index: 1;
         }
         
-        @media (max-width: 768px) {
+      @media (max-width: 768px) {
             header h1 {
-                font-size: 2.5rem;
+                font-size: 1.8rem; /* CHANGED: Reduced from 2.5rem for mobile screens */
             }
             
             header p {
-                font-size: 1.1rem;
+                font-size: 0.95rem; /* CHANGED: Reduced from 1.1rem for mobile screens */
             }
             
-            .logo-ascii {
-                font-size: 0.6rem;
+            /* CHANGED: Updated class name from .logo-ascii to .logo-svg */
+            .logo-svg {
+                width: 300px; /* Smaller width for mobile devices */
+                height: 48px; /* Proportional height for mobile */
             }
         }
         
