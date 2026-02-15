@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew the IT guy</title>
+    <title>Table View Tech</title>
     <style>
         * {
             margin: 0;
@@ -17,11 +17,77 @@
             color: #333;
         }
         
-        header {
-            background: #2c3e50;
+         header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 2rem 0;
+            padding: 2rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(255,255,255,0.03) 50px,
+                    rgba(255,255,255,0.03) 51px
+                );
+            pointer-events: none;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-ascii {
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            white-space: pre;
+            color: #3498db;
+            text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .logo-ascii {
+                font-size: 0.6rem;
+            }
         }
         
         main {
@@ -148,13 +214,39 @@
 </head>
 <body>
     <header>
-        <h1>Andrew the IT Guy</h1>
-        <p>Make your IT problem, my problem.</p>
+        <svg class="logo-svg" viewBox="0 0 500 80" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <!-- Flipped silhouette - outline only -->
+            <path d="M 490,75
+                     L 470,72 L 455,68 L 440,62 L 425,56 L 415,52
+                     L 405,48 L 398,46 L 392,45 L 385,44
+                     Q 375,42 365,41
+                     L 355,42 L 348,44 L 342,46 L 337,48
+                     L 332,50 L 327,51 L 322,52 L 317,52
+                     L 312,51 L 307,50 L 302,48 L 297,45
+                     L 292,42 L 287,40 L 282,38 L 277,36
+                     L 272,35 L 267,34 L 262,33.5 L 257,33.5
+                     L 252,33.5 L 247,33.5 L 242,33.5 L 237,33.5
+                     L 232,33.5 L 227,33.5 L 222,33.5 L 217,33.5
+                     L 212,33.5 L 207,33.5 L 202,33.5 L 197,33.5
+                     L 192,33.5 L 187,33.5 L 182,33.5 L 177,33.5
+                     L 172,33.5 L 167,33.5 L 162,33.5 L 157,33.5
+                     L 152,33.5 L 147,33.5 L 142,33.5 L 137,33.5
+                     L 132,34 L 127,35 L 122,36 L 117,38
+                     L 112,40 L 107,43 L 102,46 L 97,50
+                     L 92,54 L 88,57 L 84,59 L 80,61
+                     L 76,62 L 72,62.5 L 68,62 L 64,61
+                     L 60,59 L 56,56 L 52,53 L 48,50
+                     L 44,48 L 40,47 L 36,47 L 32,48
+                     L 28,50 L 24,53 L 20,58 L 15,64
+                     L 10,70 L 5,75"
+                  fill="none" stroke="#3498db" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <h1>Table View Tech</h1>
+        <p>Providing personal, professional IT support.</p>
     </header>
     
     <main>  
          <section class="services-section">
-            <h2>My Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <h3>Collection and Delivery</h3>
@@ -167,13 +259,13 @@
                 </div>
                 
                 <div class="service-card">
-                    <h3>Regain access to your Computer</h3>
-                    <p>If you've forgotten your password or been locked out of your PC/Laptop,Regain access to your computer after being locked out.</p>
+                    <h3>Forgotten passwords</h3>
+                    <p>Regain access to your computer or accounts if you've forgotten your password.</p>
                 </div>
                 
                 <div class="service-card">
-                    <h3>Password Recovery and Management</h3>
-                    <p>Helping recover locked accounts, setting up password managers.</p>
+                    <h3>Data Recovery</h3>
+                    <p>Retrieve data from corrupted or old hard drives</p>
                 </div>
                 
                 <div class="service-card">
